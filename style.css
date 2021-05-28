@@ -122,10 +122,14 @@ header h1#logo {
 .card {
     background: white;
     padding: 1.5rem 2rem;
-    border-radius: 0.25 rem;
+    border-radius:  0.5rem;
     margin-bottom: 2rem;
 
     color: var(--dark-blue);
+}
+
+.card:hover {
+	transform: scale(1.08);
 }
 
 .card h3 {
@@ -144,7 +148,7 @@ header h1#logo {
     margin-top: 1 rem;
 }
 
-.card.green {
+.card.total {
     background: var(--green);
     color: white;
 }
@@ -164,12 +168,12 @@ header h1#logo {
 
 table thead tr th:first-child,
 table tbody tr td:first-child {
-    border-radius: 0.25rem 0 0 0.25rem;
+    border-radius: 1rem 0 0 1rem;
 }
 
 table thead tr th:last-child,
 table tbody tr td:last-child {
-    border-radius:  0 0.25rem 0.25rem 0;
+    border-radius:  0 1rem 1rem 0;
 }
 
 table th {
@@ -182,12 +186,16 @@ table th {
     color: #969CB3;
 }
 
+table thead tr th {
+    background: #44475a;
+}
+
 table tbody tr {
     opacity: 0.7
 }
 
 table tbody tr:hover {
-    opacity: 1
+    opacity: 1;
 }
 
 table td {
@@ -228,6 +236,8 @@ td.expense {
     z-index: 999;
 }
 
+
+
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
@@ -242,7 +252,6 @@ td.expense {
     width: 90%;
     max-width: 500px;
 
-    position: relative;
     z-index: 1;
     
 }
@@ -289,7 +298,10 @@ footer {
     text-align:center;
 
     padding: 4rem 0 2rem;
-    color: var(--dark-blue)
+    color: var(--dark-blue);
+    
+    position: relative;
+    top: 20vw;
 }
 
 /* === RESPONSIVE === */
