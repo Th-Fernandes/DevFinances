@@ -1,21 +1,10 @@
-const Modal = {
-    open(){
-      //abrir Modal
-      //adiciona a class "active" ao modal
-      document
-      .querySelector('.modal-overlay')
-      .classList
-      .add('active')
-    },
-    close(){
-      document
-      .querySelector('.modal-overlay')
-      .classList
-      .remove('active')
-    }
-  }
+import { modal } from './assets/scripts/modal.js'
+import { form } from './assets/scripts/form.js'
 
-  const Storage = {
+modal.toggle()
+form.preventSubmit()
+
+const Storage = {
     get() {
       return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []
     },
@@ -25,7 +14,7 @@ const Modal = {
     }
   }
   // const responsável por saber o total de dinheiro
-  const Transaction = {
+export const Transaction = {
       all: Storage.get(),
 
       add(transaction){
@@ -71,10 +60,9 @@ const Modal = {
           return Transaction.incomes() + Transaction.expenses();
       }
 
-  }
+}
 
-
-  const DOM = {
+const DOM = {
 
       transactionsContainer: document.querySelector('#data-table tbody'),
 
@@ -128,7 +116,7 @@ const Modal = {
       
   }
 
-  const Utils = {
+  export const Utils = {
     formatAmount(value) {
       value = Number(value) * 100
 
@@ -155,69 +143,7 @@ const Modal = {
 
       return `${signal} ${value}`
     }
-  } 
-
-  const Form = {
-
-    description:document.querySelector('input#description'),
-    amount:document.querySelector('input#amount'),
-    date:document.querySelector('input#date'),
-
-    getValues() {
-        return {
-          description: Form.description.value,
-          amount: Form.amount.value,
-          date: Form.date.value
-        }
-    },
-
-    formatValues() {
-      let { description, amount, date } = Form.getValues()
-
-      amount = Utils.formatAmount(amount);
-      date = Utils.formatDate(date);
-
-      return {
-        description,
-        amount,
-        date,
-      }
-    },
-  
-    clearFields() {
-      Form.description.value = ""
-      Form.amount.value = ""
-      Form.date.value = ""
-    },
-    
-    validateFields() {
-      const { description, amount, date } = Form.getValues()
-
-      if( description.trim() === "" || amount.trim() === "" || date.trim() === "") {
-        throw new Error("Por favor, preencha todos os campos")
-      }
-    },
-
-    submit(event) {
-      event.preventDefault()
-
-      try {
-        Form.validateFields()
-
-        const transaction = Form.formatValues()
-
-        Transaction.add(transaction)
-
-        Form.clearFields()
-
-        Modal.close()
-        
-      } catch (error) {
-        alert(error.message)
-      }
-    }
   }
-
 
 const App = {
   init() {
