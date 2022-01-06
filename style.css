@@ -124,12 +124,14 @@ header h1#logo {
     padding: 1.5rem 2rem;
     border-radius:  0.5rem;
     margin-bottom: 2rem;
+    transition: .5s transform;
 
     color: var(--dark-blue);
 }
 
 .card:hover {
 	transform: scale(1.08);
+    
 }
 
 .card h3 {
@@ -145,7 +147,7 @@ header h1#logo {
     font-size: 2rem;
     line-height: 3rem;
 
-    margin-top: 1 rem;
+    margin-top: 1rem;
 }
 
 .card.total {
