@@ -284,6 +284,10 @@ body {
                 .button, button {
                   width: 48%;
                 }
+
+                #submitTransaction {
+                  background-color: $green;
+                }
               }
             }
         }

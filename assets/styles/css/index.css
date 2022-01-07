@@ -216,6 +216,9 @@ body .modal-overlay .modal #form > form .input-group.actions {
 body .modal-overlay .modal #form > form .input-group.actions .button, body .modal-overlay .modal #form > form .input-group.actions button {
   width: 48%;
 }
+body .modal-overlay .modal #form > form .input-group.actions #submitTransaction {
+  background-color: #49AA26;
+}
 body footer {
   text-align: center;
   padding: 4rem 0 2rem;
