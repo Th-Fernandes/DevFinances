@@ -9,6 +9,9 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  font-size: 93.75%;
+}
 html .sr-only {
   position: absolute;
   width: 1px;
@@ -160,6 +163,77 @@ body main section#transaction #data-table td.income {
 }
 body main section#transaction #data-table td.expense {
   color: #e92929;
+}
+body .modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+body .modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+body .modal-overlay .modal {
+  background: #f0f2f5;
+  padding: 2.4rem;
+  position: relative;
+  /* CSS DE TESTE, SE DER RUIM APAGA ELE*/
+  width: 90%;
+  max-width: 500px;
+  z-index: 1;
+}
+body .modal-overlay .modal #form {
+  max-width: 500px;
+}
+body .modal-overlay .modal #form h2 {
+  margin-top: 0;
+}
+body .modal-overlay .modal #form > form input {
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  width: 100%;
+}
+body .modal-overlay .modal #form > form .input-group {
+  margin-top: 0.8rem;
+}
+body .modal-overlay .modal #form > form .input-group > small {
+  opacity: 0.4;
+}
+body .modal-overlay .modal #form > form .input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .modal-overlay .modal #form > form .input-group.actions .button, body .modal-overlay .modal #form > form .input-group.actions button {
+  width: 48%;
+}
+body footer {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  color: #363f5f;
+  position: relative;
+  top: 20vw;
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  body main section#balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
