@@ -5,6 +5,18 @@ $light-green: #3dd705;
 $red: #e92929;
 $white: #f0f2f5;
 
+@keyframes up {
+  from {
+    top: 50px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -104,6 +116,8 @@ body {
 
     section#balance {
       margin-top: -8rem;
+      position: relative;
+      animation: 1s up;
 
       > h2 {
         color: #ffffff;
@@ -148,7 +162,9 @@ body {
     section#transaction {
       display: block;
       width: 100%;
-      overflow-x: auto;      
+      overflow-x: auto; 
+      position: relative;
+      animation: 1.25s up;     
 
       #data-table {
         width: 100%;
@@ -186,6 +202,10 @@ body {
               &:last-child {
                 border-radius:  0 1rem 1rem 0;
               } 
+
+              > img {
+                cursor: pointer;
+              }
             }
           }
         } 

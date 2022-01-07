@@ -1,4 +1,14 @@
 /* global settings */
+@keyframes up {
+  from {
+    top: 50px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -81,6 +91,8 @@ body main {
 }
 body main section#balance {
   margin-top: -8rem;
+  position: relative;
+  animation: 1s up;
 }
 body main section#balance > h2 {
   color: #ffffff;
@@ -117,6 +129,8 @@ body main section#transaction {
   display: block;
   width: 100%;
   overflow-x: auto;
+  position: relative;
+  animation: 1.25s up;
 }
 body main section#transaction #data-table {
   width: 100%;
@@ -143,6 +157,9 @@ body main section#transaction #data-table tbody tr td:first-child {
 }
 body main section#transaction #data-table tbody tr td:last-child {
   border-radius: 0 1rem 1rem 0;
+}
+body main section#transaction #data-table tbody tr td > img {
+  cursor: pointer;
 }
 body main section#transaction #data-table th {
   background: white;
